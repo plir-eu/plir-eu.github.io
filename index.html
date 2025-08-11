@@ -23,7 +23,7 @@
         body {
             background-color: #2b2b2b;
             font-family: 'Space Grotesk', sans-serif;
-            color: white;
+            color: #F6F0EB;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -33,41 +33,23 @@
         .contact-info {
             text-align: center;
         }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
     <div class="contact-info">
-        <canvas id="emailCanvas" width="300" height="60"></canvas>
+        <a href="mailto:hej@plir.eu">hej@plir.eu</a>
     </div>
-    
-    <script>
-        const canvas = document.getElementById('emailCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        // Set canvas style
-        canvas.style.cursor = 'pointer';
-        canvas.style.transition = 'opacity 0.3s ease';
-        
-        // Draw email text
-        ctx.fillStyle = '#F6F0EB';
-        ctx.font = '32px "Space Grotesk", sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('hej@plir.eu', 150, 30);
-        
-        // Add click handler
-        canvas.addEventListener('click', function() {
-            window.location.href = 'mailto:' + 'hej' + '@' + 'plir' + '.' + 'eu';
-        });
-        
-        // Add hover effect
-        canvas.addEventListener('mouseenter', function() {
-            canvas.style.opacity = '0.7';
-        });
-        
-        canvas.addEventListener('mouseleave', function() {
-            canvas.style.opacity = '1';
-        });
-    </script>
 </body>
 </html>
